@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import requests
 import json
 import hfut_calendar_tools
@@ -42,7 +43,7 @@ def main(argv):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3 or sys.argv[1] == "help":
-        print("Usage: generate_ics username password")
+        print("Usage: ./generate_ics.py username password")
         exit(-1)
     main(sys.argv)
 
