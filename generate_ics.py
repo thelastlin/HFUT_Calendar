@@ -14,9 +14,11 @@ def main(argv):
 
     student_id = login_session.get('http://jxglstu.hfut.edu.cn/eams5-student/for-std/course-table').url.split('/')[-1]
 
+    semester_ID = 94
+
     get_data_payload = {
         'bizTypeId': 23,
-        'semesterId': 74,
+        'semesterId': semester_ID,
         'dataId': student_id
     }
     get_data_req = login_session.get(hfut_calendar_tools.URL.get_data, params=get_data_payload)
@@ -46,4 +48,3 @@ if __name__ == "__main__":
         print("Usage: ./generate_ics.py username password")
         exit(-1)
     main(sys.argv)
-
